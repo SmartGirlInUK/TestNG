@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class VisaConfirmationTest extends TestBase {
-    @Test(priority = 1)
+    @Test(groups = {"smoke"})
     public void anAustralianComingToUKForTourism() {
         clickOnElement(By.xpath("//div[@id='global-cookie-message']/div/div[2]/button[2]"));
         clickOnElement(By.xpath("//main[@id='content']/div[2]/div[1]/article/section[1]/a"));
@@ -18,7 +18,7 @@ public class VisaConfirmationTest extends TestBase {
         Assert.assertEquals(actualText, "You will not need a visa to come to the UK");
     }
 
-    @Test(priority = 2)
+    @Test(groups = {"regression"})
     public void aChileanComingToTheUKForWorkAndPlansOnStayingForLongerThanSixMonths() {
         clickOnElement(By.xpath("//div[@id='global-cookie-message']/div/div[2]/button[2]"));
         clickOnElement(By.xpath("//main[@id='content']/div[2]/div[1]/article/section[1]/a"));
